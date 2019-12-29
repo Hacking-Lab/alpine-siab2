@@ -1,10 +1,7 @@
 # Alpine Linux Shell in a Box Service
 
-## Video1
-![Video](./alpine-siab2.mp4)
-
 ## Video2
-[Video](./alpine-siab2.mp4)
+[![Video](img/alpine-siab2-video.png)](https://github.com/Hacking-Lab/alpine-siab2/blob/master/alpine-siab2.mp4)
 
 
 
