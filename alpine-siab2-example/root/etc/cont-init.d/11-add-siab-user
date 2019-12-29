@@ -1,0 +1,32 @@
+#!/usr/bin/with-contenv bash
+
+echo "================================="
+echo $SIAB_USER
+echo "================================="
+
+if [ "$SIAB_USER" != "" ]; then
+  if [ "$SIAB_USER" == "root" ]; then
+    echo "SIAB_USER=root"
+    echo 'root:$SIAB_PASSWORD' | chpasswd
+  else
+    echo "SIAB_USER not empty and not root"
+    adduser -D -u 2222 $SIAB_USER
+    echo "$SIAB_USER:$SIAB_PASSWORD" | chpasswd
+  fi
+else
+  export SIAB_USER=hacker
+  echo "SIAB_USER not defined - will use default username hacker"
+  adduser -D -u 2222 $SIAB_USER
+  echo "$SIAB_USER:$SIAB_PASSWORD" | chpasswd
+fi
+
+echo "
+------------------------------------
+GID/UID
+-------------------------------------
+User uid:    $(id -u $SIAB_USER)
+User gid:    $(id -g $SIAB_USER)
+-------------------------------------
+"
+
+

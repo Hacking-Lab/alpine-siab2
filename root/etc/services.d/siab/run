@@ -1,0 +1,7 @@
+#!/usr/bin/with-contenv sh
+
+COMMAND="/bin/shellinaboxd --debug --no-beep -u shellinabox -g shellinabox -c /var/lib/shellinabox -p ${SIAB_PORT} --user-css ${SIAB_USERCSS}"
+
+echo "Starting container .."
+echo "Executing: ${COMMAND}"
+exec ${COMMAND};

@@ -1,0 +1,15 @@
+version: '2'
+
+services:
+  shellinabox:
+    image: hackinglab/alpine-siab2
+    environment:
+    - USERNAME=hacker
+    - SIAB_USER=siaboperator
+    - SIAB_GROUP=siaboperator
+    - SIAB_PASSWORD=compass
+    - SIAB_SSL=false
+    - SIAB_PKGS=
+    - SIAB_SERVICE=/:LOGIN
+    ports:
+    - 4200:4200
