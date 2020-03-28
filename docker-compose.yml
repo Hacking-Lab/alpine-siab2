@@ -1,14 +1,11 @@
 version: '3.4'
 
 services:
-  alpine-siab2-hobo:
-    image: REGISTRY_BASE_URL/alpine-siab2:latest
+  alpine-siab-hobo:
+    image: REGISTRY_BASE_URL/alpine-siab:latest
     hostname: 'hobo'
     environment:
       - "domainname=idocker.REALM_DOMAIN_SUFFIX"
-      - "HL_USER_USERNAME=ttyoperator"
-      - "HL_USER_PASSWORD=compass"
-      - "HL_ROOT_PASSWORD=dQ0edEdD6dWZMJj"
     labels:
       - "traefik.port=80"
       - "traefik.frontend.rule=Host:hobo.REALM_DOMAIN_SUFFIX"
@@ -17,3 +14,5 @@ services:
       - ./UUID.env
     volumes:
       - ./UUID.gn:/goldnugget/UUID.gn
+
+      

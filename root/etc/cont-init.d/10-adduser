@@ -43,7 +43,7 @@ else
    echo "\$HL_USER_USERNAME is set in environment variable"
   if [ "$HL_USER_USERNAME" == "root" ]; then
     echo "HL_USER_USERNAME=root"
-    echo 'root:$pwd2' | chpasswd
+    echo "root:$pwd2" | chpasswd
   else
     echo "\$HL_USER_USERNAME is set and not root"
     adduser -D -u 2000 $HL_USER_USERNAME
@@ -60,5 +60,8 @@ User uid:    $(id -u $HL_USER_USERNAME)
 User gid:    $(id -g $HL_USER_USERNAME)
 -------------------------------------
 "
+
+echo "HL_USER_USERNAME=$HL_USER_USERNAME" > /etc/hluser
+echo "HL_USER_GROUPNAME=`id -g -n $HL_USER_USERNAME`" >> /etc/hluser
 
 
