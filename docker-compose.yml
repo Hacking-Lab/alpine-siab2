@@ -1,18 +1,10 @@
 version: '3.4'
 
 services:
-  alpine-siab-hobo:
-    image: REGISTRY_BASE_URL/alpine-siab:latest
-    hostname: 'hobo'
+  alpine-siab2:
+    image: hackinglab/alpine-siab2:3.2
     environment:
-      - "domainname=idocker.REALM_DOMAIN_SUFFIX"
-    labels:
-      - "traefik.port=80"
-      - "traefik.frontend.rule=Host:hobo.REALM_DOMAIN_SUFFIX"
-      - "traefik.protocol=http"
-    env_file:
-      - ./UUID.env
-    volumes:
-      - ./UUID.gn:/goldnugget/UUID.gn
-
-      
+      - "HL_USER_USERNAME=hacker"
+      - "HL_USER_PASSWORD=compass"
+    ports:
+      - 4200:4200
