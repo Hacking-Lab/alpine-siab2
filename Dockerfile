@@ -1,4 +1,4 @@
-FROM hackinglab/alpine-base:latest
+FROM hackinglab/alpine-base:3.2
 MAINTAINER Ivan Buetler <ivan.buetler@compass-security.com>
 
 ENV SIAB_USERCSS="Normal:+/etc/shellinabox/options-enabled/00_White-On-Black.css,Reverse:-/etc/shellinabox/options-enabled/00+Black-on-White.css;Colors:+/etc/shellinabox/options-enabled/01+Color-Terminal.css,Monochrome:-/etc/shellinabox/options-enabled/01_Monochrome.css" \
